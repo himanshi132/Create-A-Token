@@ -20,18 +20,18 @@ contract MyToken {
     // public variables here
     string public tokenname = "Himanshi4";
      string public tokenAbbrv = "HP4";
-     uint1304 public totalsupply = 0;
+     uint256 public totalsupply = 0;
 
     // mapping variable here
-    mapping (address => uint1304) public balances;
+    mapping (address => uint256) public balances;
 
     // mint function
-    function mint(address _address, uint1304 _values) public {
+    function mint(address _address, uint256 _values) public {
         totalsupply += _values;
         balances[_address] += _values;
     }
     // burn function
-    function burn(address _address, uint1304 _values) public {
+    function burn(address _address, uint256 _values) public {
         if (balances[_address] >= _values) {
             totalsupply -= _values;
             balances[_address] -= _values;
